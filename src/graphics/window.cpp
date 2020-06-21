@@ -9,11 +9,11 @@ namespace nebula::graphics {
 		if (!init())
 			glfwTerminate();
 
-		for (int i = 0; i < MAX_KEYS; i++)
-			m_Keys[i] = false;
+		for (bool & m_Key : m_Keys)
+			m_Key = false;
 
-		for (int i = 0; i < MAX_BUTTONS; i++)
-			m_Buttons[i] = false;
+		for (bool & m_Button : m_Buttons)
+			m_Button = false;
 	}
 
 	Window::~Window() {
@@ -87,17 +87,17 @@ namespace nebula::graphics {
 	}
 
 	void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-		Window* win = (Window*)glfwGetWindowUserPointer(window);
+		auto* win = (Window*)glfwGetWindowUserPointer(window);
 		win->m_Keys[key] = action != GLFW_RELEASE;
 	}
 
 	void Window::mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
-		Window* win = (Window*)glfwGetWindowUserPointer(window);
+		auto* win = (Window*)glfwGetWindowUserPointer(window);
 		win->m_Buttons[button] = action != GLFW_RELEASE;
 	}
 
 	void Window::cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
-		Window* win = (Window*)glfwGetWindowUserPointer(window);
+		auto* win = (Window*)glfwGetWindowUserPointer(window);
 		win->mx = xpos;
 		win->my = ypos;
 	}

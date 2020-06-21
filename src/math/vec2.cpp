@@ -56,6 +56,22 @@ namespace nebula::math {
         return left.Divide(right);
     }
 
+    vec2& vec2::operator+=(const vec2& other) {
+        return Add(other);
+    }
+
+    vec2& vec2::operator-=(const vec2& other) {
+        return Subtract(other);
+    }
+
+    vec2& vec2::operator*=(const vec2& other) {
+        return Multiply(other);
+    }
+
+    vec2& vec2::operator/=(const vec2& other) {
+        return Divide(other);
+    }
+
     bool vec2::operator==(const vec2& other) const {
         return x == other.x && y == other.y;
     }

@@ -24,6 +24,11 @@ namespace nebula::math{
         bool operator==(const vec2& other) const;
         bool operator!=(const vec2& other) const;
 
+        vec2& operator+=(const vec2& other);
+        vec2& operator-=(const vec2& other);
+        vec2& operator*=(const vec2& other);
+        vec2& operator/=(const vec2& other);
+
         friend std::ostream& operator<<(std::ostream& stream, const vec2& vector);
 	};
 

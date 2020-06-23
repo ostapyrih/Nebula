@@ -23,7 +23,7 @@ namespace nebula::graphics {
 	bool Window::init() {
 
 		if (!glfwInit()) {
-			std::cout << "Error initializing opengl" << std::endl;
+			std::cout << "Error initializing GLFW" << std::endl;
 			return false;
 		}
 

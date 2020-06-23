@@ -1,6 +1,7 @@
 //
 // Created by ostap on 6/21/2020.
 //
+#pragma once
 
 #include <iostream>
 

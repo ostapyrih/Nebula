@@ -1,6 +1,7 @@
 //
 // Created by ostap on 6/21/2020.
 //
+#pragma once
 
 #include <iostream>
 
@@ -9,7 +10,7 @@ namespace nebula::math {
     struct vec4 {
         float x, y, z, w;
 
-        vec4();
+        vec4() = default;
 
         vec4(float x, float y, float z, float w);
 

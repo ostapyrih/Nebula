@@ -5,9 +5,11 @@
 
 #include <iostream>
 
-namespace nebula::math {
+namespace nebula::math
+{
 
-    struct vec4 {
+    struct vec4
+    {
         float x, y, z, w;
 
         vec4() = default;

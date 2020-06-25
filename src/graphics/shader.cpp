@@ -77,37 +77,37 @@ namespace nebula::graphics
         return program;
     }
 
-    GLint Shader::getUniformLocation(const GLchar *name)
+    GLint Shader::getUniformLocation(const GLchar *name) const
     {
         return glGetUniformLocation(m_ShaderID, name);
     }
 
-    void Shader::setUniform1f(const GLchar *name, float value)
+    void Shader::setUniform1f(const GLchar *name, float value) const
     {
         glUniform1f(getUniformLocation(name), value);
     }
 
-    void Shader::setUniform1i(const GLchar *name, int value)
+    void Shader::setUniform1i(const GLchar *name, int value) const
     {
         glUniform1i(getUniformLocation(name), value);
     }
 
-    void Shader::setUniform2f(const GLchar *name, const math::vec2 &vector)
+    void Shader::setUniform2f(const GLchar *name, const math::vec2 &vector) const
     {
         glUniform2f(getUniformLocation(name), vector.x, vector.y);
     }
 
-    void Shader::setUniform3f(const GLchar *name, const math::vec3 &vector)
+    void Shader::setUniform3f(const GLchar *name, const math::vec3 &vector) const
     {
         glUniform3f(getUniformLocation(name), vector.x, vector.y, vector.z);
     }
 
-    void Shader::setUniform4f(const GLchar *name, const math::vec4 &vector)
+    void Shader::setUniform4f(const GLchar *name, const math::vec4 &vector) const
     {
         glUniform4f(getUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
     }
 
-    void Shader::setUniformMat4(const GLchar *name, const math::mat4 &matrix)
+    void Shader::setUniformMat4(const GLchar *name, const math::mat4 &matrix) const
     {
         glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
     }

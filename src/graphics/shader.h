@@ -21,14 +21,14 @@ namespace nebula::graphics {
 
         ~Shader();
 
-        GLint getUniformLocation(const GLchar *name);
+        GLint getUniformLocation(const GLchar *name) const;
 
-        void setUniform1f(const GLchar* name, float value);
-        void setUniform1i(const GLchar* name, int value);
-        void setUniform2f(const GLchar* name, const math::vec2& vector);
-        void setUniform3f(const GLchar* name, const math::vec3& vector);
-        void setUniform4f(const GLchar* name, const math::vec4& vector);
-        void setUniformMat4(const GLchar* name, const math::mat4& matrix);
+        void setUniform1f(const GLchar* name, float value) const;
+        void setUniform1i(const GLchar* name, int value) const;
+        void setUniform2f(const GLchar* name, const math::vec2& vector) const;
+        void setUniform3f(const GLchar* name, const math::vec3& vector) const;
+        void setUniform4f(const GLchar* name, const math::vec4& vector) const;
+        void setUniformMat4(const GLchar* name, const math::mat4& matrix) const;
 
         void enable() const;
 

@@ -11,7 +11,7 @@ namespace nebula::graphics::API
     class VertexBuffer
     {
     private:
-        GLint m_BufferID;
+        GLuint m_BufferID;
         GLint m_ComponentCount;
 
     public:

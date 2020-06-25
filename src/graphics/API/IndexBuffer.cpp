@@ -6,8 +6,8 @@
 
 namespace nebula::graphics::API
 {
-    IndexBuffer::IndexBuffer(GLushort *data, GLsizei count, GLuint Count) :
-            m_Count(Count)
+    IndexBuffer::IndexBuffer(GLushort *data, GLsizei count) :
+            m_Count(count)
     {
         glGenBuffers(1, &m_BufferID);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_BufferID);

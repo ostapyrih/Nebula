@@ -10,11 +10,11 @@ namespace nebula::graphics::API
     class IndexBuffer
     {
     private:
-        GLint m_BufferID;
+        GLuint m_BufferID;
         GLint m_Count;
 
     public:
-        IndexBuffer(GLushort *data, GLsizei count, GLuint Count);
+        IndexBuffer(GLushort *data, GLsizei count);
 
         void bind() const;
         void unbind() const;

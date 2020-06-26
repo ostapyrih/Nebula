@@ -20,7 +20,7 @@ namespace nebula::graphics
             renderable->getVAO()->bind();
             renderable->getIBO()->bind();;
 
-            renderable->getShader().setUniformMat4("ml_matrix", mat4::translation(renderable->getPosition()));
+            renderable->getShader().setUniformMat4("ml_matrix", Mat4::translation(renderable->getPosition()));
             glDrawElements(GL_TRIANGLES, renderable->getIBO()->getCount(), GL_UNSIGNED_SHORT, nullptr);
 
             renderable->getVAO()->unbind();

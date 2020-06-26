@@ -1,4 +1,4 @@
-#include "window.h"
+#include "Window.h"
 
 namespace nebula::graphics
 {

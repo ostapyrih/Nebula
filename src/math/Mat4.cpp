@@ -2,18 +2,18 @@
 // Created by ostap on 6/22/2020.
 //
 
-#include "mat4.h"
+#include "Mat4.h"
 
 namespace nebula::math
 {
 
-    mat4::mat4()
+    Mat4::Mat4()
     {
         memset(elements, 0, 4 * 4 * sizeof(float));
 
     }
 
-    mat4::mat4(float diagonal)
+    Mat4::Mat4(float diagonal)
     {
         memset(elements, 0, 4 * 4 * sizeof(float));
         elements[0 + 0 * 4] = diagonal;
@@ -22,12 +22,12 @@ namespace nebula::math
         elements[3 + 3 * 4] = diagonal;
     }
 
-    mat4 mat4::identity()
+    Mat4 Mat4::identity()
     {
-        return mat4(1.0f);
+        return Mat4(1.0f);
     }
 
-    mat4 &mat4::multiply(const mat4 &other)
+    Mat4 &Mat4::multiply(const Mat4 &other)
     {
         float data[16];
         for (int row = 0; row < 4; row++)
@@ -46,19 +46,19 @@ namespace nebula::math
         return *this;
     }
 
-    mat4 operator*(mat4 left, const mat4 &right)
+    Mat4 operator*(Mat4 left, const Mat4 &right)
     {
         return left.multiply(right);
     }
 
-    mat4 &mat4::operator*=(const mat4 &other)
+    Mat4 &Mat4::operator*=(const Mat4 &other)
     {
         return multiply(other);
     }
 
-    mat4 mat4::orthographic(float left, float right, float bottom, float top, float near, float far)
+    Mat4 Mat4::orthographic(float left, float right, float bottom, float top, float near, float far)
     {
-        mat4 result(1.0f);
+        Mat4 result(1.0f);
 
         result.elements[0 + 0 * 4] = 2.0f / (right - left);
 
@@ -73,9 +73,9 @@ namespace nebula::math
         return result;
     }
 
-    mat4 mat4::perspective(float fov, float aspectRation, float near, float far)
+    Mat4 Mat4::perspective(float fov, float aspectRation, float near, float far)
     {
-        mat4 result(1.0f);
+        Mat4 result(1.0f);
 
         float q = 1.0f / (float) tan(toRadians(0.5f * fov));
         float a = q / aspectRation;
@@ -91,9 +91,9 @@ namespace nebula::math
         return result;
     }
 
-    mat4 mat4::translation(const vec3 &translation)
+    Mat4 Mat4::translation(const Vec3 &translation)
     {
-        mat4 result(1.0f);
+        Mat4 result(1.0f);
 
         result.elements[0 + 3 * 4] = translation.x;
         result.elements[1 + 3 * 4] = translation.y;
@@ -102,9 +102,9 @@ namespace nebula::math
         return result;
     }
 
-    mat4 mat4::rotation(float angle, const vec3 &axis)
+    Mat4 Mat4::rotation(float angle, const Vec3 &axis)
     {
-        mat4 result(1.0f);
+        Mat4 result(1.0f);
 
         float r = toRadians(angle);
         float c = cos(r);
@@ -130,9 +130,9 @@ namespace nebula::math
         return result;
     }
 
-    mat4 mat4::scale(const vec3 &scale)
+    Mat4 Mat4::scale(const Vec3 &scale)
     {
-        mat4 result(1.0f);
+        Mat4 result(1.0f);
 
         result.elements[0 + 0 * 4] = scale.x;
         result.elements[1 + 1 * 4] = scale.y;

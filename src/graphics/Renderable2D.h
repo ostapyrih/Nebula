@@ -3,10 +3,10 @@
 //
 #pragma once
 
-#include "../math/math.h"
+#include "../math/Math.h"
 #include "API/VertexArray.h"
 #include "API/IndexBuffer.h"
-#include "shader.h"
+#include "Shader.h"
 
 namespace nebula::graphics
 {
@@ -16,16 +16,16 @@ namespace nebula::graphics
     class Renderable2D
     {
     protected:
-        vec3 m_Position;
-        vec2 m_Size;
-        vec4 m_Color;
+        Vec3 m_Position;
+        Vec2 m_Size;
+        Vec4 m_Color;
 
         VertexArray *m_VertexArray;
         IndexBuffer *m_IndexBuffer;
         Shader &m_Shader;
 
     public:
-        Renderable2D(vec3 position, vec2 size, vec4 color, Shader &shader) :
+        Renderable2D(Vec3 position, Vec2 size, Vec4 color, Shader &shader) :
             m_Position(position), m_Size(size), m_Color(color), m_Shader(shader)
         {
             m_VertexArray = new VertexArray();
@@ -62,9 +62,9 @@ namespace nebula::graphics
         inline const IndexBuffer* getIBO() const { return m_IndexBuffer; }
         inline const Shader& getShader() const { return m_Shader; }
 
-        inline const vec3& getPosition() const { return m_Position; }
-        inline const vec2& getSize() const { return m_Size; }
-        inline const vec4& getColor() const { return m_Color; }
+        inline const Vec3& getPosition() const { return m_Position; }
+        inline const Vec2& getSize() const { return m_Size; }
+        inline const Vec4& getColor() const { return m_Color; }
     };
 
 }

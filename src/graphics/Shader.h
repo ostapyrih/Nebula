@@ -3,8 +3,8 @@
 //
 #pragma once
 
-#include "../utils/fileutils.h"
-#include "../math/math.h"
+#include "../utils/Fileutils.h"
+#include "../math/Math.h"
 #include <vector>
 #include <iostream>
 #include <GL/glew.h>
@@ -25,10 +25,10 @@ namespace nebula::graphics {
 
         void setUniform1f(const GLchar* name, float value) const;
         void setUniform1i(const GLchar* name, int value) const;
-        void setUniform2f(const GLchar* name, const math::vec2& vector) const;
-        void setUniform3f(const GLchar* name, const math::vec3& vector) const;
-        void setUniform4f(const GLchar* name, const math::vec4& vector) const;
-        void setUniformMat4(const GLchar* name, const math::mat4& matrix) const;
+        void setUniform2f(const GLchar* name, const math::Vec2& vector) const;
+        void setUniform3f(const GLchar* name, const math::Vec3& vector) const;
+        void setUniform4f(const GLchar* name, const math::Vec4& vector) const;
+        void setUniformMat4(const GLchar* name, const math::Mat4& matrix) const;
 
         void enable() const;
 

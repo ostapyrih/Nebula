@@ -2,7 +2,7 @@
 // Created by ostap on 6/23/2020.
 //
 
-#include "shader.h"
+#include "Shader.h"
 
 using namespace nebula::utils;
 
@@ -92,22 +92,22 @@ namespace nebula::graphics
         glUniform1i(getUniformLocation(name), value);
     }
 
-    void Shader::setUniform2f(const GLchar *name, const math::vec2 &vector) const
+    void Shader::setUniform2f(const GLchar *name, const math::Vec2 &vector) const
     {
         glUniform2f(getUniformLocation(name), vector.x, vector.y);
     }
 
-    void Shader::setUniform3f(const GLchar *name, const math::vec3 &vector) const
+    void Shader::setUniform3f(const GLchar *name, const math::Vec3 &vector) const
     {
         glUniform3f(getUniformLocation(name), vector.x, vector.y, vector.z);
     }
 
-    void Shader::setUniform4f(const GLchar *name, const math::vec4 &vector) const
+    void Shader::setUniform4f(const GLchar *name, const math::Vec4 &vector) const
     {
         glUniform4f(getUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
     }
 
-    void Shader::setUniformMat4(const GLchar *name, const math::mat4 &matrix) const
+    void Shader::setUniformMat4(const GLchar *name, const math::Mat4 &matrix) const
     {
         glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
     }

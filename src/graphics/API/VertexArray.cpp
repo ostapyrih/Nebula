@@ -18,6 +18,7 @@ namespace nebula::graphics::API
         {
             delete m_VertexBuffers[i];
         }
+        glDeleteVertexArrays(1, &m_ArrayID);
     }
 
     void VertexArray::addBuffer(VertexBuffer *buffer, GLuint index)

@@ -16,6 +16,10 @@ namespace nebula::graphics::API
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
+    VertexBuffer::~VertexBuffer() {
+        glDeleteBuffers(1, &m_BufferID);
+    }
+
     void VertexBuffer::bind() const
     {
         glBindBuffer(GL_ARRAY_BUFFER, m_BufferID);

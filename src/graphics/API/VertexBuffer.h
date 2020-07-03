@@ -16,7 +16,7 @@ namespace nebula::graphics::API
 
     public:
         VertexBuffer(GLfloat *data, GLsizei count, GLuint componentCount);
-
+        ~VertexBuffer();
         void bind() const;
         void unbind() const;
 

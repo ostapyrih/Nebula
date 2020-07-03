@@ -4,15 +4,15 @@
 #pragma once
 
 #include <deque>
-#include "Renderable2D.h"
 #include "Renderer2D.h"
+#include "StaticSprite.h"
 
 namespace nebula::graphics
 {
     class SimpleRenderer2D : public Renderer2D
     {
     private:
-        std::deque<const Renderable2D*> m_RenderQueue;
+        std::deque<const StaticSprite*> m_RenderQueue;
 
     public:
         void submit(const Renderable2D* renderable) override;

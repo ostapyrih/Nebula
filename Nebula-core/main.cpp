@@ -1,22 +1,13 @@
 #include "src/graphics/Window.h"
 #include "src/graphics/Shader.h"
-#include "src/graphics/API/VertexBuffer.h"
-#include "src/graphics/API/IndexBuffer.h"
-#include "src/graphics/API/VertexArray.h"
-#include "src/graphics/Renderable2D.h"
-#include "src/graphics/Renderer2D.h"
-#include "src/graphics/SimpleRenderer2D.h"
 #include "src/graphics/Sprite.h"
 #include "src/graphics/BatchRenderer2D.h"
-
-#include <chrono>
 
 int main() {
     using namespace nebula;
     using namespace graphics;
     using namespace utils;
     using namespace math;
-    using namespace API;
 
     Window window("Nebula", 960, 540);
 
@@ -24,11 +15,11 @@ int main() {
 
     Mat4 ortho = Mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 
-    Shader shader("../../../basic.vert", "../../../basic.frag");
+    Shader shader("basic.vert", "basic.frag");
     shader.enable();
     shader.setUniformMat4("pr_matrix", ortho);
 
-    Sprite sprite(5, 5, 4, 4, Vec4(0, 1, 0, 1));
+    Sprite sprite(5, 5, 4, 4, Vec4(1, 1, 1, 1));
     Sprite sprite2(7, 1, 2, 3, Vec4(1, 1, 0, 1));
 
     while (!window.closed()) {

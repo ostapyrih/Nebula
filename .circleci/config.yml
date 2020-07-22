@@ -1,0 +1,18 @@
+ version: 2.1
+
+ orbs:
+  win: circleci/windows@2.2.0
+
+ jobs:
+   build:
+     executor:
+      name: win/default
+      shell: powershell.exe
+    
+     steps:
+       - checkout
+       - run:
+          name: "Build solution" 
+          shell: powershell.exe
+          command: |
+            msbuild /t:Build /p:Configuration=Release /p:Platform=x64 Nebula.sln

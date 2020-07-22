@@ -15,4 +15,4 @@
           name: "Build solution" 
           shell: powershell.exe
           command: |
-            buildVS Nebula.sln
+            msbuild /t:Build /p:Configuration=Release /p:Platform=x64 Nebula.sln

@@ -15,7 +15,7 @@ namespace nebula::graphics
 
     struct VertexData{
         Vec3 vertex;
-        Vec4 color;
+        unsigned int color;
     };
 
     class Renderable2D

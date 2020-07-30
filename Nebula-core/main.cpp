@@ -2,6 +2,7 @@
 #include "src/graphics/Shader.h"
 #include "src/graphics/Sprite.h"
 #include "src/graphics/BatchRenderer2D.h"
+#include "src/utils/Timer.h"
 
 int main() {
     using namespace nebula;
@@ -22,6 +23,9 @@ int main() {
     Sprite sprite(5, 5, 4, 4, Vec4(1, 1, 1, 1));
     Sprite sprite2(7, 1, 2, 3, Vec4(1, 1, 0, 1));
 
+    Timer timer;
+    unsigned int fps = 0;
+
     while (!window.closed()) {
         window.clear();
         double x, y;
@@ -33,6 +37,13 @@ int main() {
         batch.end();
         batch.flush();
         window.update();
+        
+        fps++;
+        if (timer.elapsed() > 1.0f) {
+            printf("%d FPS\n", fps);
+            fps = 0;
+            timer.reset();
+        }
     }
 
     return 0;

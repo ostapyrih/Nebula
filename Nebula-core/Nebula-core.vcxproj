@@ -151,6 +151,10 @@
       <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -194,6 +198,7 @@
     <ClInclude Include="src\math\Vec3.h" />
     <ClInclude Include="src\math\Vec4.h" />
     <ClInclude Include="src\utils\Fileutils.h" />
+    <ClInclude Include="src\utils\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="basic.frag" />

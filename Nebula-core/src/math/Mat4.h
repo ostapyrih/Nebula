@@ -13,10 +13,10 @@ namespace nebula::math
     struct Mat4
     {
 
-        struct
+        union
         {
             float elements[16];
-            Vec4 columns[4];
+            Vec4 rows[4];
         };
 
         Mat4();

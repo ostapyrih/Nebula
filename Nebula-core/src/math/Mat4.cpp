@@ -48,18 +48,20 @@ namespace nebula::math
 
 	Vec4 Mat4::multiply(const Vec4& other) const {	
 		return Vec4(
-			columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x * other.w,
-			columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y * other.w,
-			columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z + columns[3].z * other.w,
-			columns[0].w * other.x + columns[1].w * other.y + columns[2].w * other.z + columns[3].w * other.w
+			rows[0].x * other.x + rows[0].y * other.y + rows[0].z * other.z + rows[0].w * other.w,
+			rows[1].x * other.x + rows[1].y * other.y + rows[1].z * other.z + rows[1].w * other.w,
+			rows[2].x * other.x + rows[2].y * other.y + rows[2].z * other.z + rows[2].w * other.w,
+			rows[3].x * other.x + rows[3].y * other.y + rows[3].z * other.z + rows[3].w * other.w
 		);
 	}
 
 	Vec3 Mat4::multiply(const Vec3& other) const {
+
+
 		return Vec3(
-			columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z,
-			columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z,
-			columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z
+			rows[0].x * other.x + rows[0].y * other.y + rows[0].z * other.z + rows[0].w,
+			rows[1].x * other.x + rows[1].y * other.y + rows[1].z * other.z + rows[1].w,
+			rows[2].x * other.x + rows[2].y * other.y + rows[2].z * other.z + rows[2].w
 		);
 	}
 
@@ -120,10 +122,9 @@ namespace nebula::math
 	Mat4 Mat4::translation(const Vec3& translation)
 	{
 		Mat4 result(1.0f);
-
-		result.elements[0 + 3 * 4] = translation.x;
-		result.elements[1 + 3 * 4] = translation.y;
-		result.elements[2 + 3 * 4] = translation.z;
+		result.elements[3 + 0 * 4] = translation.x;
+		result.elements[3 + 1 * 4] = translation.y;
+		result.elements[3 + 2 * 4] = translation.z;
 
 		return result;
 	}

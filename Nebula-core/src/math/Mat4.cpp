@@ -68,12 +68,12 @@ namespace nebula::math
 		return left.multiply(right);
 	}
 
-	Vec4 operator*(Mat4& left, const Vec4& right)
+	Vec4 operator*(const Mat4& left, const Vec4& right)
 	{
 		return left.multiply(right);
 	}
 
-	Vec3 operator*(Mat4& left, const Vec3& right) {
+	Vec3 operator*(const Mat4& left, const Vec3& right) {
 		return left.multiply(right);
 	}
 

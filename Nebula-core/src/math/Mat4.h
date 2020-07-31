@@ -40,8 +40,8 @@ namespace nebula::math
         static Mat4 scale(const Vec3 &scale);
 
         friend Mat4 operator*(Mat4 left, const Mat4& right);
-        friend Vec3 operator*(Mat4& left, const Vec3& right);
-        friend Vec4 operator*(Mat4& left, const Vec4& right);
+        friend Vec3 operator*(const Mat4& left, const Vec3& right);
+        friend Vec4 operator*(const Mat4& left, const Vec4& right);
 
         Mat4 &operator*=(const Mat4 &other);
     };

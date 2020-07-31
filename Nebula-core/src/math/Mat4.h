@@ -25,7 +25,9 @@ namespace nebula::math
 
         static Mat4 identity();
 
-        Mat4 &multiply(const Mat4 &other);
+        Mat4& multiply(const Mat4& other);
+        Vec3 multiply(const Vec3& other) const;
+        Vec4 multiply(const Vec4& other) const;
 
         static Mat4 orthographic(float left, float right, float bottom, float top, float near, float far);
 
@@ -37,7 +39,9 @@ namespace nebula::math
 
         static Mat4 scale(const Vec3 &scale);
 
-        friend Mat4 operator*(Mat4 left, const Mat4 &right);
+        friend Mat4 operator*(Mat4 left, const Mat4& right);
+        friend Vec3 operator*(Mat4& left, const Vec3& right);
+        friend Vec4 operator*(Mat4& left, const Vec4& right);
 
         Mat4 &operator*=(const Mat4 &other);
     };

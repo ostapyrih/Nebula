@@ -70,23 +70,24 @@ namespace nebula::graphics {
 
 		unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
-		m_Buffer->vertex = position;
+		m_Buffer->vertex = *m_TransformationBack * position;
 		m_Buffer->color = c;
 		m_Buffer++;
 
-		m_Buffer->vertex = Vec3(position.x,	position.y + size.y, position.z);
+		m_Buffer->vertex = *m_TransformationBack * Vec3(position.x,	position.y + size.y, position.z);
 		m_Buffer->color = c;
 		m_Buffer++;
 
-		m_Buffer->vertex = Vec3(position.x + size.x, position.y + size.y, position.z);
+		m_Buffer->vertex = *m_TransformationBack * Vec3(position.x + size.x, position.y + size.y, position.z);
 		m_Buffer->color = c;
 		m_Buffer++;
 
-		m_Buffer->vertex = Vec3(position.x + size.x, position.y, position.z);;
+		m_Buffer->vertex = *m_TransformationBack * Vec3(position.x + size.x, position.y, position.z);;
 		m_Buffer->color = c;
 		m_Buffer++;
 
 		m_IndexCounter += 6;
+
 	}
 
 	void BatchRenderer2D::end() 

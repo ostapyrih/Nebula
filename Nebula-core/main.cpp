@@ -20,8 +20,7 @@ int main() {
     
     TileLayer layer(shader);
 
-    layer.add(new Sprite(5, 5, 4, 4, Vec4(1, 1, 1, 1)));
-
+    layer.add(new Sprite(5, 0, 4, 4, Vec4(1, 1, 1, 1)));
 
     Timer timer;
     unsigned int fps = 0;

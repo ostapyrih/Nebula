@@ -4,20 +4,21 @@
 
 #include "BatchRenderer2D.h"
 
-namespace nebula::graphics {
+namespace nebula::graphics
+{
 
-	BatchRenderer2D::BatchRenderer2D() 
+	BatchRenderer2D::BatchRenderer2D()
 	{
 		init();
 	}
 
-	BatchRenderer2D::~BatchRenderer2D() 
+	BatchRenderer2D::~BatchRenderer2D()
 	{
 		delete m_IBO;
 		glDeleteBuffers(1, &m_VBO);
 	}
 
-	void BatchRenderer2D::init() 
+	void BatchRenderer2D::init()
 	{
 		glGenVertexArrays(1, &m_VAO);
 		glGenBuffers(1, &m_VBO);
@@ -34,9 +35,9 @@ namespace nebula::graphics {
 		GLushort* indices = new GLushort[RENDERER_INDICIES_SIZE];
 
 		int offset = 0;
-		for (int i = 0; i < RENDERER_INDICIES_SIZE; i += 6) 
+		for (int i = 0; i < RENDERER_INDICIES_SIZE; i += 6)
 		{
-			indices[  i  ] = offset + 0;
+			indices[i] = offset + 0;
 			indices[i + 1] = offset + 1;
 			indices[i + 2] = offset + 2;
 			indices[i + 3] = offset + 2;
@@ -74,7 +75,7 @@ namespace nebula::graphics {
 		m_Buffer->color = c;
 		m_Buffer++;
 
-		m_Buffer->vertex = *m_TransformationBack * Vec3(position.x,	position.y + size.y, position.z);
+		m_Buffer->vertex = *m_TransformationBack * Vec3(position.x, position.y + size.y, position.z);
 		m_Buffer->color = c;
 		m_Buffer++;
 
@@ -90,7 +91,7 @@ namespace nebula::graphics {
 
 	}
 
-	void BatchRenderer2D::end() 
+	void BatchRenderer2D::end()
 	{
 		glUnmapBuffer(GL_ARRAY_BUFFER);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);

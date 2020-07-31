@@ -18,12 +18,14 @@ namespace nebula::graphics
 		std::vector<Mat4> m_TransformationStack;
 		const Mat4* m_TransformationBack;
 	protected:
-		Renderer2D() {
+		Renderer2D()
+		{
 			m_TransformationStack.push_back(Mat4::identity());
 			m_TransformationBack = &m_TransformationStack.back();
 		}
 	public:
-		void push(const Mat4& matrix, bool override = false) {
+		void push(const Mat4& matrix, bool override = false)
+		{
 			if (override)
 				m_TransformationStack.push_back(matrix);
 			else
@@ -32,8 +34,10 @@ namespace nebula::graphics
 
 		}
 
-		void pop() {
-			if (m_TransformationStack.size() > 1) {
+		void pop()
+		{
+			if (m_TransformationStack.size() > 1)
+			{
 				m_TransformationStack.pop_back();
 				m_TransformationBack = &m_TransformationStack.back();
 			}

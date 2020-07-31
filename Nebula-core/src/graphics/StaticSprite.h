@@ -2,10 +2,10 @@
 
 #include "Renderable2D.h"
 
-namespace nebula::graphics 
+namespace nebula::graphics
 {
-	
-	class StaticSprite : public Renderable2D 
+
+	class StaticSprite : public Renderable2D
 	{
 	private:
 		VertexArray* m_VertexArray;

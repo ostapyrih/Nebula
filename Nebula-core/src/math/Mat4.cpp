@@ -46,7 +46,8 @@ namespace nebula::math
 		return *this;
 	}
 
-	Vec4 Mat4::multiply(const Vec4& other) const {	
+	Vec4 Mat4::multiply(const Vec4& other) const
+	{
 		return Vec4(
 			rows[0].x * other.x + rows[0].y * other.y + rows[0].z * other.z + rows[0].w * other.w,
 			rows[1].x * other.x + rows[1].y * other.y + rows[1].z * other.z + rows[1].w * other.w,
@@ -55,7 +56,8 @@ namespace nebula::math
 		);
 	}
 
-	Vec3 Mat4::multiply(const Vec3& other) const {
+	Vec3 Mat4::multiply(const Vec3& other) const
+	{
 
 
 		return Vec3(
@@ -75,7 +77,8 @@ namespace nebula::math
 		return left.multiply(right);
 	}
 
-	Vec3 operator*(const Mat4& left, const Vec3& right) {
+	Vec3 operator*(const Mat4& left, const Vec3& right)
+	{
 		return left.multiply(right);
 	}
 

@@ -9,18 +9,18 @@
 
 namespace nebula::graphics::buffers
 {
-    class VertexArray
-    {
-    private:
-        GLuint m_ArrayID;
-        std::vector<VertexBuffer*> m_VertexBuffers;
+	class VertexArray
+	{
+	private:
+		GLuint m_ArrayID;
+		std::vector<VertexBuffer*> m_VertexBuffers;
 
-    public:
-        VertexArray();
-        ~VertexArray();
+	public:
+		VertexArray();
+		~VertexArray();
 
-        void addBuffer(VertexBuffer* buffer, GLuint index);
-        void bind() const;
-        void unbind() const;
-    };
+		void addBuffer(VertexBuffer* buffer, GLuint index);
+		void bind() const;
+		void unbind() const;
+	};
 }

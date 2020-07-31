@@ -2,9 +2,10 @@
 
 #include "Renderable2D.h"
 
-namespace nebula::graphics {
+namespace nebula::graphics
+{
 
-	class Sprite : public Renderable2D 
+	class Sprite : public Renderable2D
 	{
 	private:
 

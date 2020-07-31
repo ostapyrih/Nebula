@@ -8,19 +8,19 @@
 namespace nebula::graphics::buffers
 {
 
-    class VertexBuffer
-    {
-    private:
-        GLuint m_BufferID;
-        GLint m_ComponentCount;
+	class VertexBuffer
+	{
+	private:
+		GLuint m_BufferID;
+		GLint m_ComponentCount;
 
-    public:
-        VertexBuffer(GLfloat *data, GLsizei count, GLuint componentCount);
-        ~VertexBuffer();
-        void bind() const;
-        void unbind() const;
+	public:
+		VertexBuffer(GLfloat* data, GLsizei count, GLuint componentCount);
+		~VertexBuffer();
+		void bind() const;
+		void unbind() const;
 
-        inline GLuint getComponentCount() const { return m_ComponentCount; }
-    };
+		inline GLuint getComponentCount() const { return m_ComponentCount; }
+	};
 
 }

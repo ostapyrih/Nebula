@@ -7,7 +7,7 @@
 #include <GL/glew.h>
 #include "VertexBuffer.h"
 
-namespace nebula::graphics::API
+namespace nebula::graphics::buffers
 {
     class VertexArray
     {

@@ -4,7 +4,7 @@
 
 #include "VertexBuffer.h"
 
-namespace nebula::graphics::API
+namespace nebula::graphics::buffers
 {
 
     VertexBuffer::VertexBuffer(GLfloat *data, GLsizei count, GLuint componentCount) :

@@ -37,12 +37,12 @@ namespace nebula::math
                 float sum = 0.0f;
                 for (int e = 0; e < 4; e++)
                 {
-                    sum += elements[e + row * 4] * other.elements[col + e * 4];
+                    sum += elements[col + e * 4] * other.elements[e + row * 4];
                 }
                 data[col + row * 4] = sum;
             }
         }
-        memcpy(elements, data, 4 * 4 * sizeof(float));
+        memcpy(elements, data, 16 * sizeof(float));
         return *this;
     }
 

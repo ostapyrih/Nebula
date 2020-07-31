@@ -3,25 +3,25 @@
 #include "src/graphics/Sprite.h"
 #include "src/graphics/BatchRenderer2D.h"
 #include "src/utils/Timer.h"
+#include "src/graphics/layers/TileLayer.h"
 
 int main() {
     using namespace nebula;
     using namespace graphics;
     using namespace utils;
     using namespace math;
+    using namespace layers;
 
     Window window("Nebula", 960, 540);
 
     BatchRenderer2D batch;
 
-    Mat4 ortho = Mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+    Shader* shader = new Shader("basic.vert", "basic.frag");
+    
+    TileLayer layer(shader);
 
-    Shader shader("basic.vert", "basic.frag");
-    shader.enable();
-    shader.setUniformMat4("pr_matrix", ortho);
+    layer.add(new Sprite(5, 5, 4, 4, Vec4(1, 1, 1, 1)));
 
-    Sprite sprite(5, 5, 4, 4, Vec4(1, 1, 1, 1));
-    Sprite sprite2(7, 1, 2, 3, Vec4(1, 1, 0, 1));
 
     Timer timer;
     unsigned int fps = 0;
@@ -29,13 +29,9 @@ int main() {
     while (!window.closed()) {
         window.clear();
         double x, y;
+        layer.render();
         window.getCursorPosition(x, y);
-        shader.setUniform2f("light_pos", Vec2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.0f)));
-        batch.begin();
-        batch.submit(&sprite);
-        batch.submit(&sprite2);
-        batch.end();
-        batch.flush();
+        shader->setUniform2f("light_pos", Vec2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.0f)));
         window.update();
         
         fps++;

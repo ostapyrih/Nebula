@@ -4,13 +4,13 @@
 #pragma once
 
 #include "../math/Math.h"
-#include "API/VertexArray.h"
-#include "API/IndexBuffer.h"
+#include "buffers/VertexArray.h"
+#include "buffers/IndexBuffer.h"
 #include "Shader.h"
 
 namespace nebula::graphics
 {
-    using namespace API;
+    using namespace buffers;
     using namespace math;
 
     struct VertexData{

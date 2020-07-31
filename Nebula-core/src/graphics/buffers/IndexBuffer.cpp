@@ -4,7 +4,7 @@
 
 #include "IndexBuffer.h"
 
-namespace nebula::graphics::API
+namespace nebula::graphics::buffers
 {
     IndexBuffer::IndexBuffer(GLushort *data, GLsizei count) :
             m_Count(count)

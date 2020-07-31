@@ -5,7 +5,7 @@
 
 #include <GL/glew.h>
 
-namespace nebula::graphics::API
+namespace nebula::graphics::buffers
 {
 
     class VertexBuffer

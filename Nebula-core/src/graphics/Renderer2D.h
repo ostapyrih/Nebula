@@ -4,13 +4,14 @@
 #pragma once
 
 #include <gl/glew.h>
-#include "Renderable2D.h"
 #include "../math/Math.h"
 #include <vector>
 
 namespace nebula::graphics
 {
 	using namespace math;
+
+	class Renderable2D;
 
 	class Renderer2D
 	{

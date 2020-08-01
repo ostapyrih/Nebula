@@ -4,6 +4,7 @@
 #pragma once
 
 #include "Renderer2D.h"
+#include "Renderable2D.h"
 
 namespace nebula::graphics
 {
